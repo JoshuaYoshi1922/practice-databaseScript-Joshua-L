@@ -17,9 +17,11 @@ gamertag VARCHAR(50)
 
 CREATE TABLE Purchase_date (
 purchase_id INT PRIMARY KEY AUTO_INCREMENT,
-player_id INT NOT NULL REFERENCES Players(player_id),
-game_id INT NOT NULL REFERENCES Video_Game(game_id),
-purchase DATE
+player_id INT NOT NULL,
+game_id INT NOT NULL,
+purchase DATE,
+FOREIGN KEY (player_id) REFERENCES Players(player_id),
+FOREIGN KEY (game_id) REFERENCES Video_Game(game_id)
 );
 
 SELECT * FROM Video_Game;
